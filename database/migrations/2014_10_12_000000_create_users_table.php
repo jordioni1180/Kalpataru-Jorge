@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->bigInteger('curso_id');
+            $table->unsignedbigInteger('curso_id');
             $table->foreign('curso_id')->references('id')->on('cursos')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();

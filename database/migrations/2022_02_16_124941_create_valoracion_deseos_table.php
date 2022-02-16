@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDeseosTable extends Migration
+class CreateValoracionDeseosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateDeseosTable extends Migration
      */
     public function up()
     {
-        Schema::create('deseos', function (Blueprint $table) {
+        Schema::create('valoracion_deseos', function (Blueprint $table) {
             $table->id();
-            $table->text('texto');
-            $table->integer('validado')->default('0');
-            $table->unsignedbigInteger('user_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('deseo_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('deseo_id')->references('id')->on('deseos')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateDeseosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('deseos');
+        Schema::dropIfExists('valoracion_deseos');
     }
 }
