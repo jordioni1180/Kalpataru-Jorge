@@ -1334,6 +1334,21 @@
             'reference' => 'da444caae6aca7a19c0c140f68c6182e337d5b1c',
             'dev_requirement' => false,
         ),
+        'twbs/bootstrap' => array(
+            'pretty_version' => 'v5.1.3',
+            'version' => '5.1.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twbs/bootstrap',
+            'aliases' => array(),
+            'reference' => '1a6fdfae6be09b09eaced8f0e442ca6f7680a61e',
+            'dev_requirement' => false,
+        ),
+        'twitter/bootstrap' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => 'v5.1.3',
+            ),
+        ),
         'vlucas/phpdotenv' => array(
             'pretty_version' => 'v5.4.1',
             'version' => '5.4.1.0',
