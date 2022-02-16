@@ -16,7 +16,7 @@ class CreateDeseosTable extends Migration
         Schema::create('deseos', function (Blueprint $table) {
             $table->id();
             $table->text('texto');
-            $table->integer('validado');
+            $table->integer('validado')->default('0');
             $table->timestamps();
         });
     }
