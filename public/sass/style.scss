@@ -1,4 +1,12 @@
-$colorfondo: #000000;
+$colorfondo: #6b2b2b;
+$navBackground:#A18CD1;
+$navlinkHover:#6441A4;
 body{
     background-color:$colorfondo;
+}
+.navbar{
+    background-color: $navBackground!important;
+}
+.nav-link:hover{
+    color: $navlinkHover!important;;
 }

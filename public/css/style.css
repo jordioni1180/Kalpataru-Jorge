@@ -1,4 +1,12 @@
 body {
-  background-color: #000000;
+  background-color: #6b2b2b;
+}
+
+.navbar {
+  background-color: #A18CD1 !important;
+}
+
+.nav-link:hover {
+  color: #6441A4 !important;
 }
 /*# sourceMappingURL=style.css.map */
