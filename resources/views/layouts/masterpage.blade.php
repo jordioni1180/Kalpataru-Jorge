@@ -14,7 +14,8 @@
     @yield('estilos')
 </head>
 <body>
-    @include('layout.alertas')
+    @include('layouts.nav')
+    @include('layouts.alertas')
     @yield('contenido')
     
 </body>

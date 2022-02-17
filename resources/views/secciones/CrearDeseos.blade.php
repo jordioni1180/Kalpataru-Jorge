@@ -6,3 +6,6 @@
 @section('contenido')
 
 @endsection
+@section('scripts')
+
+@endsection
