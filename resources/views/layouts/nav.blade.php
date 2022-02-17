@@ -17,10 +17,10 @@
           </li>
           @if(!Auth::check())
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{{route('login')}}">Inicio Sesion</a>
+          <a class="nav-link active" aria-current="page" href="{{route('login')}}">Inicio Sesion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{{route('register')}}">Registrarse</a>
+          <a class="nav-link active" aria-current="page" href="{{route('register')}}">Registrarse</a>
         </li>
         @else
         <li class="nav-item">
@@ -31,7 +31,7 @@
           </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="{{route('perfil.index')}}">Ver perfil</a>
+          <a class="nav-link active" aria-current="page" href="{{route('perfil.index')}}">Ver perfil</a>
         </li>
         @endif
         </ul>
