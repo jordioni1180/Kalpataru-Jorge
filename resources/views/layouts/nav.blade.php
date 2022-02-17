@@ -15,9 +15,25 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Escribir Deseo</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Mi perfil</a>
-          </li>
+          @if(!Auth::check())
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{route('login')}}">Inicio Sesion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{route('register')}}">Registrarse</a>
+        </li>
+        @else
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="" onclick="event.preventDefault(); document.getElementById('logout').submit();">Cerrar sesion</a>
+          <!-- Solo usuarios identificados -->
+          <form id="logout" action="{{route('logout')}}" method="POST" style="display:none;">
+          @csrf
+          </form>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{{route('perfil.index')}}">Ver perfil</a>
+        </li>
+        @endif
         </ul>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
