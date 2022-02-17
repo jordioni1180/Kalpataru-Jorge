@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Deseo extends Model
 {
     use HasFactory;
+
+    
+    public function usuario(){
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
+
 }

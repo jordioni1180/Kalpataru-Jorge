@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Curso extends Model
 {
     use HasFactory;
+
+   
+    public function usuarios(){
+        return $this->hasMany(User::class, 'curso_id', 'id');
+    }
 }

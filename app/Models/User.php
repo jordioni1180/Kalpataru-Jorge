@@ -41,4 +41,22 @@ class User extends \TCG\Voyager\Models\User
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Get all of the comments for the User
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function deseos(){
+        return $this->hasMany(Deseo::class, 'user_id', 'id');
+    }
+
+    public function valorados(){
+        return $this->belongsToMany(Deseo::class, 'valoracion_deseos', 'user_id','deseo_id');
+    }
+
+    public function user(){
+        return $this->belongsTo(Curso::class, 'curso_id', 'id');
+    }
+
 }
