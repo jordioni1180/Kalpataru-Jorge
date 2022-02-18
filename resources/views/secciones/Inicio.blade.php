@@ -5,13 +5,10 @@
 @endsection
 @section('contenido')
 
-    @foreach ($deseos as $deseo)
 
-    @endforeach
-    
 
-    
+
 @endsection
 @section('scripts')
-    
+
 @endsection
