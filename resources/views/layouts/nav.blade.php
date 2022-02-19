@@ -11,7 +11,7 @@
             <a class="nav-link active" aria-current="page" href="#">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Deseo</a>
+            <a class="nav-link active" aria-current="page" href="{{route('deseos.index')}}">Deseos</a>
           </li>
           @if(!Auth::check())
         <li class="nav-item">

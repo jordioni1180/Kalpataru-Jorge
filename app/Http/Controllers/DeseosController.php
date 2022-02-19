@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Deseo;
+use Illuminate\Support\Facades\DB;
 
-class InicioController extends Controller
+class DeseosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,9 @@ class InicioController extends Controller
      */
     public function index()
     {
-        
-        return view('secciones.Inicio');
+        $deseos=Deseo::all();
+   
+        return view('secciones.Deseos',['deseos'=>$deseos]);
     }
 
     /**
