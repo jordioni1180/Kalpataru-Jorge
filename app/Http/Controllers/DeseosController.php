@@ -28,7 +28,7 @@ class DeseosController extends Controller
      */
     public function create()
     {
-        //
+        return view('secciones.CrearDeseos');
     }
 
     /**

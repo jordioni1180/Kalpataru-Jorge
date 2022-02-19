@@ -15,11 +15,13 @@ use App\Http\Controllers\DeseosController;
 */
 
 //Ruta de inicio al cargar la pagina por primera vez
-Route::get('/', [App\Http\Controllers\InicioController::class, 'index'])->name('home');
+Route::get('/', [InicioController::class, 'index'])->name('home');
 //Ruta de deseos al cargar la pagina por primera vez
-Route::get('/deseos', [App\Http\Controllers\DeseosController::class, 'index'])->name('deseos');
+Route::get('/deseos', [DeseosController::class, 'index'])->name('deseos');
 //Rutas del controlador de deseos
 Route::resource('deseos', DeseosController::class);
+//Rutas del controlador de inicio
+Route::resource('inicio', InicioController::class);
 
 //Grupo de rutas del voyager
 Route::group(['prefix' => 'admin'], function () {
