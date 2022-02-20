@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\DeseosController;
+use App\Http\Controllers\PerfilController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +18,16 @@ use App\Http\Controllers\DeseosController;
 
 //Ruta de inicio al cargar la pagina por primera vez
 Route::get('/', [InicioController::class, 'index'])->name('home');
-//Ruta de deseos al cargar la pagina por primera vez
+//Ruta de deseos al cargar la pagina por url
 Route::get('/deseos', [DeseosController::class, 'index'])->name('deseos');
+//Ruta de inicio al cargar la pagina por primera vez
+Route::get('/perfil', [PerfilController::class, 'index'])->name('perfil');
 //Rutas del controlador de deseos
 Route::resource('deseos', DeseosController::class);
 //Rutas del controlador de inicio
 Route::resource('inicio', InicioController::class);
+//Rutas del controlador de perfil
+Route::resource('perfil', PerfilController::class);
 
 //Grupo de rutas del voyager
 Route::group(['prefix' => 'admin'], function () {

@@ -1,5 +1,22 @@
 
+$HeaderCardColor:#7E52A0;
 
 .deseos{
     margin:2%;
+    border-top-right-radius: 12px!important;
+    border-top-left-radius: 12px!important;
+}
+
+.card{
+    border-top-right-radius: 12px!important;
+    border-top-left-radius: 12px!important;
+    border-bottom-right-radius: 12px!important;
+    border-bottom-left-radius: 12px!important;
+}
+.card-header {
+    
+    background-color: $HeaderCardColor!important;
+    color: white !important;
+    border-top-right-radius: 12px!important;
+    border-top-left-radius: 12px!important;
 }

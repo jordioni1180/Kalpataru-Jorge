@@ -1,12 +1,25 @@
-$colorfondo: #6b2b2b;
+$colorfondo: #f6eaF4;
 $navBackground:#A18CD1;
 $navlinkHover:#6441A4;
+$colorNav:#29274C;
 body{
     background-color:$colorfondo;
 }
 .navbar{
-    background-color: $navBackground!important;
+    // background-color: $navBackground!important;
+    background: transparent !important;
+    z-index: 100;
+
+    
+}
+.nav-link{
+    color: $colorNav!important;
 }
 .nav-link:hover{
     color: $navlinkHover!important;;
 }
+
+.navbar-dark .navbar-toggler{
+    background-color:#F4DAF6;
+}
+

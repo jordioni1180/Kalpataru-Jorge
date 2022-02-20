@@ -1,12 +1,21 @@
 body {
-  background-color: #6b2b2b;
+  background-color: #f6eaF4;
 }
 
 .navbar {
-  background-color: #A18CD1 !important;
+  background: transparent !important;
+  z-index: 100;
+}
+
+.nav-link {
+  color: #29274C !important;
 }
 
 .nav-link:hover {
   color: #6441A4 !important;
+}
+
+.navbar-dark .navbar-toggler {
+  background-color: #F4DAF6;
 }
 /*# sourceMappingURL=style.css.map */

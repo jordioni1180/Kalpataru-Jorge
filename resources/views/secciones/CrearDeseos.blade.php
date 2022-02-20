@@ -4,17 +4,21 @@
 <link rel="stylesheet" href="{{URL::asset('css/CrearDeseos.css') }}">
 @endsection
 @section('contenido')
-    <div id="containerDeseo">
+    <div id="seccion"><p>En esta seccion podras mandar tus deseos a favor de esta causa para el resto del mundo</p> </div>
     <form method="post" action="{{}}">
+        <div id="containerDeseo">
         <div class="form-outline mb-4">
-            <input type="text" id="form4Example1" class="form-control" name="nombre" placeholder="Nombre del deseo"/>
+            <input type="text" id="formTexto" class="form-control" name="nombre" placeholder="Nombre del deseo"/>
           </div>
         <div class="form-outline mb-4">
-        <textarea class="form-control" id="textAreaExample6" rows="3" name="texto" placeholder="Escribe tu deseo"></textarea>
+        <textarea class="form-control" id="textArea" rows="3" name="texto" placeholder="Escribe tu deseo"></textarea>
     </div> 
-    <button class="btn btn-primary" type="submit">Crear Deseo</button>
-    </form>
     </div>
+    <div id="boton">
+    <button class="btn btn-primary" type="submit">Crear Deseo</button>
+    </div>
+    </form>
+    
 @endsection
 @section('scripts')
 

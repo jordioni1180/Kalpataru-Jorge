@@ -1,0 +1,58 @@
+$HeaderCardColor:#7E52A0;
+
+body{
+    overflow-y:hidden;
+}
+
+.deseos{
+    margin-top: 2% !important;
+    margin-left: 15%!important;
+    width: 75% !important;
+    
+}
+#container{
+    overflow:auto;
+}
+
+.profile-header{
+    background-color: #7E52A0;
+    
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+
+.nav-tabs {
+    border-bottom: none;
+    
+}
+.nav-tabs .nav-link {
+    color: white!important;
+    margin-bottom: -1px;
+    background: 0 0;
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+.card{
+    border-top-right-radius: 12px!important;
+    border-top-left-radius: 12px!important;
+    border-bottom-right-radius: 12px!important;
+    border-bottom-left-radius: 12px!important;
+}
+.card-header {
+    
+    background-color: $HeaderCardColor!important;
+    color: white !important;
+    border-top-right-radius: 12px!important;
+    border-top-left-radius: 12px!important;
+}
+
+.MeGusta{
+    margin-top: 2% !important;
+    margin-left: 15%!important;
+    width: 75% !important;
+}

@@ -1,4 +1,33 @@
 #containerDeseo {
-  margin: 4%;
+  margin: 6%;
+  background-color: #fff;
+  background-image: linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px), linear-gradient(#eee 0.1em, transparent 0.1em);
+  background-size: 100% 1.4em;
+  border-radius: 15px;
+}
+
+#boton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 6%;
+}
+
+input[type="text"] {
+  width: 75%;
+  margin-left: 75px;
+  background: transparent;
+  border: none;
+}
+
+#textArea {
+  height: 218px;
+  width: 75%;
+  margin-left: 75px;
+  background: transparent;
+  border: none;
 }
 /*# sourceMappingURL=CrearDeseos.css.map */
