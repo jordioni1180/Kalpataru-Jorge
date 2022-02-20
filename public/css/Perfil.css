@@ -14,6 +14,9 @@ body {
 
 .profile-header {
   background-color: #7E52A0;
+  width: 75%;
+  margin-left: 15%;
+  border-radius: 15px;
 }
 
 .nav {
