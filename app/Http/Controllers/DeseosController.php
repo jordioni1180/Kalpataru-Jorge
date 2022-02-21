@@ -17,7 +17,7 @@ class DeseosController extends Controller
     public function index()
     {
         $deseos=Deseo::all();
-   
+
         return view('secciones.Deseos',['deseos'=>$deseos]);
     }
 
@@ -39,7 +39,9 @@ class DeseosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data=$request::all();
+
+        $deseo=new Deseo();
     }
 
     /**

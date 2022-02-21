@@ -12,37 +12,18 @@
         <div class="profile">
             <div class="profile-header">
                <ul class="profile-header-tab nav nav-tabs">
-                  <li class="nav-item"><a href="#Editar Perfil" class="nav-link" data-toggle="tab">Editar Perfil</a></li>
-                  <li class="nav-item"><a href="#Mis Deseos" class="nav-link" data-toggle="tab">Mis Deseos</a></li>
-                  <li class="nav-item"><a href="#Me gusta" class="nav-link" data-toggle="tab">Me Gusta</a></li>
+                  <li class="nav-item"><a href="#" onclick="MisDeseos()" class="nav-link" data-toggle="tab">Mis Deseos</a></li>
+                  <li class="nav-item"><a href="#" onclick="MeGusta()" class="nav-link" data-toggle="tab">Me Gusta</a></li>
                </ul>
             </div>
          </div>
-         <div id="content" class="content content-full-width" style="height:60%;width:100%;border:none;overflow:auto;">
+         <div id="content" class="content content-full-width" style="height:65%;width:100%;border:none;overflow:auto;">
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Editar Perfil
-            </button>
-  
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Editar Perfil</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <form action="" method="">
-                        <div class="modal-body">
-                        ...
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                        </form>
-                        </div>
-                    </div>
-                    </div>
-                </div>
+
+
+
+
+
             @foreach ($usuario->deseos as $deseo)
             <div class="deseos">
                 <div class="card">
@@ -81,10 +62,8 @@
       </div>
    </div>
 </div>
-    
+
 @endsection
 @section('scripts')
-<script>
-
-</script>
+<script src="{{URL::asset('js/perfil.js') }}"></script>
 @endsection

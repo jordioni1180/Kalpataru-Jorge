@@ -12,6 +12,10 @@ body {
   overflow: auto;
 }
 
+.profile {
+  margin-bottom: 1%;
+}
+
 .profile-header {
   background-color: #7E52A0;
   width: 75%;
@@ -35,12 +39,18 @@ body {
 }
 
 .nav-tabs .nav-link {
+  cursor: pointer !important;
   color: white !important;
   margin-bottom: -1px;
   background: 0 0;
   border: 1px solid transparent;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
+}
+
+.nav-tabs .nav-link:hover {
+  color: white !important;
+  background-color: #6441A4 !important;
 }
 
 .card {
@@ -58,6 +68,7 @@ body {
 }
 
 .MeGusta {
+  display: none;
   margin-top: 2% !important;
   margin-left: 15% !important;
   width: 75% !important;
