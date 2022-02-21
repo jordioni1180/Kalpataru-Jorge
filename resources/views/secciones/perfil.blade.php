@@ -17,15 +17,15 @@
                </ul>
             </div>
          </div>
-         <div id="content" class="content content-full-width" style="height:65%;width:100%;border:none;overflow:auto;">
+         <div id="content" class="content content-full-width " style="max-height:20%;width:100%;border:none;overflow:auto;">
             <!-- Button trigger modal -->
 
 
 
 
-
+            <div class="deseos col-md-12 mx-auto">
             @foreach ($usuario->deseos as $deseo)
-            <div class="deseos">
+
                 <div class="card">
                     <div class="card-header">
                     {{$deseo->nombre}} - {{$deseo->created_at}}
@@ -38,8 +38,9 @@
                         </blockquote>
                     </div>
                 </div>
-            </div>
+
             @endforeach
+        </div>
 
             @foreach ($usuario->valorados as $deseo)
             <div class="MeGusta">

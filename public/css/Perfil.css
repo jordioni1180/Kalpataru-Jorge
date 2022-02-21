@@ -2,12 +2,6 @@ body {
   overflow-y: hidden;
 }
 
-.deseos {
-  margin-top: 2% !important;
-  margin-left: 15% !important;
-  width: 75% !important;
-}
-
 #container {
   overflow: auto;
 }
@@ -58,6 +52,9 @@ body {
   border-top-left-radius: 12px !important;
   border-bottom-right-radius: 12px !important;
   border-bottom-left-radius: 12px !important;
+  margin-top: 2% !important;
+  margin-left: 15% !important;
+  width: 75% !important;
 }
 
 .card-header {

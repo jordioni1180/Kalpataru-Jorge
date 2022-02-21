@@ -6,6 +6,7 @@
 @section('contenido')
     <div id="seccion"><p>En esta seccion podras mandar tus deseos a favor de esta causa para el resto del mundo</p> </div>
     <form method="post" action="{{route('deseos.store')}}">
+        @csrf
         <div id="containerDeseo">
         <div class="form-outline mb-4">
             <input type="text" id="formTexto" class="form-control" name="nombre" placeholder="Nombre del deseo"/>

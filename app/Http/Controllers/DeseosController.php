@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Deseo;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class DeseosController extends Controller
 {
@@ -39,9 +40,15 @@ class DeseosController extends Controller
      */
     public function store(Request $request)
     {
-        $data=$request::all();
+        $data=$request->all();
+
+        $usuario=Auth::user();
 
         $deseo=new Deseo();
+        $deseo->nombre=$data['nombre'];
+        $deseo->texto=$data['texto'];
+        $usuario->deseos()->save($deseo);
+        return \Redirect::back();
     }
 
     /**
