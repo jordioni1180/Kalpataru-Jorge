@@ -155,6 +155,7 @@ REPLACE INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displ
 -- Volcando estructura para tabla kalpataru_jorge.deseos
 CREATE TABLE IF NOT EXISTS `deseos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `texto` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `validado` int(11) NOT NULL DEFAULT '0',
   `user_id` bigint(20) unsigned NOT NULL,
@@ -163,10 +164,18 @@ CREATE TABLE IF NOT EXISTS `deseos` (
   PRIMARY KEY (`id`),
   KEY `deseos_user_id_foreign` (`user_id`),
   CONSTRAINT `deseos_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla kalpataru_jorge.deseos: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla kalpataru_jorge.deseos: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `deseos` DISABLE KEYS */;
+REPLACE INTO `deseos` (`id`, `nombre`, `texto`, `validado`, `user_id`, `created_at`, `updated_at`) VALUES
+	(1, 'Deseo1 ', 'Me gustaria poder cumplir mi deseo de aprobar este proyecto', 1, 1, '2022-02-17 18:38:15', '2022-02-17 18:38:16'),
+	(2, 'Deseo 2', 'La pelicula de spiderman pudo ser mejor', 1, 1, '2022-02-17 18:38:52', '2022-02-17 18:38:53'),
+	(3, 'Deseo 4', 'Ojala poder viajar a portugal pronto', 0, 1, '2022-02-17 18:39:35', '2022-02-17 18:39:35'),
+	(4, 'Deseo 5', 'La moraleja dice que al que madruga dios le ayuda, entonces nunca me ayudara', 1, 1, '2022-02-17 18:40:04', '2022-02-17 18:40:05'),
+	(5, 'Deseo 6', 'Sigo trabajando en el diseño de esta pagina', 0, 1, '2022-02-19 03:19:00', '2022-02-19 03:19:00'),
+	(6, 'Deseo 7', 'Espero que el scroll funcione bien', 0, 1, '2022-02-19 03:19:26', '2022-02-19 03:19:26'),
+	(7, 'Deseo 8', 'Deseo número 8, sigo creando deseos', 1, 1, '2022-02-19 03:19:58', '2022-02-19 03:19:59');
 /*!40000 ALTER TABLE `deseos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla kalpataru_jorge.failed_jobs
@@ -353,7 +362,7 @@ CREATE TABLE IF NOT EXISTS `permission_role` (
   CONSTRAINT `permission_role_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla kalpataru_jorge.permission_role: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla kalpataru_jorge.permission_role: ~35 rows (aproximadamente)
 /*!40000 ALTER TABLE `permission_role` DISABLE KEYS */;
 REPLACE INTO `permission_role` (`permission_id`, `role_id`) VALUES
 	(1, 1),
@@ -534,10 +543,12 @@ CREATE TABLE IF NOT EXISTS `valoracion_deseos` (
   KEY `valoracion_deseos_deseo_id_foreign` (`deseo_id`),
   CONSTRAINT `valoracion_deseos_deseo_id_foreign` FOREIGN KEY (`deseo_id`) REFERENCES `deseos` (`id`) ON DELETE CASCADE,
   CONSTRAINT `valoracion_deseos_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla kalpataru_jorge.valoracion_deseos: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `valoracion_deseos` DISABLE KEYS */;
+REPLACE INTO `valoracion_deseos` (`id`, `user_id`, `deseo_id`, `created_at`, `updated_at`) VALUES
+	(1, 1, 3, '2022-02-20 20:30:43', '2022-02-20 20:30:44');
 /*!40000 ALTER TABLE `valoracion_deseos` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
