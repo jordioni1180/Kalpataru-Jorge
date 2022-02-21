@@ -2,7 +2,7 @@ function MisDeseos(){
     let Megusta = document.getElementsByClassName("MeGusta");
     let Deseos = document.getElementsByClassName("deseos");
 
-    for (let i = 0; i < MeGusta.length; i++) {
+    for (let i = 0; i < Megusta.length; i++) {
         Megusta[i].style.display="none";
     }
 

@@ -17,13 +17,13 @@
                </ul>
             </div>
          </div>
-         <div id="content" class="content content-full-width " style="max-height:20%;width:100%;border:none;overflow:auto;">
+         <div id="content" class="content content-full-width">
             <!-- Button trigger modal -->
 
 
 
 
-            <div class="deseos col-md-12 mx-auto">
+            <div class="deseos">
             @foreach ($usuario->deseos as $deseo)
 
                 <div class="card">
@@ -34,11 +34,11 @@
                         <blockquote class="blockquote mb-0">
                             <p></p>
                             <footer class="blockquote">{{$deseo->texto}}</footer>
-                            <p></p>
+                            <p>Likes - {{$deseo->valorados->count()}}</p>
                         </blockquote>
                     </div>
                 </div>
-
+                <hr>
             @endforeach
         </div>
 
@@ -52,7 +52,7 @@
                         <blockquote class="blockquote mb-0">
                             <p></p>
                             <footer class="blockquote">{{$deseo->texto}}</footer>
-                            <p></p>
+                            <p>Likes - {{$deseo->valorados->count()}}</p>
                         </blockquote>
                     </div>
                 </div>

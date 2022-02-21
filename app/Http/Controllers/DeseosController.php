@@ -17,9 +17,11 @@ class DeseosController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
         $deseos=Deseo::all();
 
-        return view('secciones.Deseos',['deseos'=>$deseos]);
+
+        return view('secciones.Deseos',['deseos'=>$deseos,'usuario'=>$user]);
     }
 
     /**

@@ -15,10 +15,20 @@
                 <blockquote class="blockquote mb-0">
                     <p></p>
                     <footer class="blockquote">{{$deseo->texto}}</footer>
-                    <p></p>
+                    <p><div id="likes">Likes - {{$deseo->valorados->count()}}</div><div id="gustar">
+
+                        @if($deseo->valorados->contains($usuario->id)) 
+                        puto
+                        @else
+                        Madre
+                        @endif
+
+                        
+                        </div></p>
                 </blockquote>
             </div>
         </div>
+        <hr>
     </div>
     @endforeach
 
