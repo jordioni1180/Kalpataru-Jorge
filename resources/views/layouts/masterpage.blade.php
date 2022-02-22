@@ -19,7 +19,7 @@
     @include('layouts.nav')
     @include('layouts.alertas')
     @yield('contenido')
-    
+
 </body>
 </html>
 @yield('scripts')
