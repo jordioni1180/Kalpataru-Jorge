@@ -15,8 +15,7 @@
 
 #fondo::before {
   content: "";
-  background-image: url(../images/tanabata.jpg);
-  background-size: cover;
+  background-image: url(../images/FondoPastel.svg);
   position: absolute;
   top: 0px;
   right: 0px;

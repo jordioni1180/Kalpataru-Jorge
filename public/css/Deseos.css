@@ -1,3 +1,8 @@
+#btnArriba {
+  background: transparent;
+  border: none;
+}
+
 button[type="submit"] {
   background: transparent;
   border: none;

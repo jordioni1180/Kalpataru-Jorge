@@ -21,7 +21,6 @@ class DeseosController extends Controller
         $user = Auth::user();
         $deseos=Deseo::inRandomOrder()->limit(40)->get();
 
-
         return view('secciones.Deseos',['deseos'=>$deseos,'usuario'=>$user]);
     }
 

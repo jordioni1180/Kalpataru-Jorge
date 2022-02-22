@@ -1,8 +1,5 @@
 $HeaderCardColor:#7E52A0;
 $backgroundLinksHover:#6441A4;
-body{
-   
-}
 
 hr{
     width: 75%;
@@ -71,7 +68,16 @@ button[type="submit"]{
 
 .MeGusta{
     display: none;
-    margin-top: 2% !important;
-    margin-left: 15%!important;
-    width: 75% !important;
+    // margin-top: 2% !important;
+    // margin-left: 10%!important;
+    // // width: 75% !important;
 }
+#btnArriba{
+    background:transparent;
+    border:none;
+    
+}
+.row {
+    --bs-gutter-x: 0;
+}
+

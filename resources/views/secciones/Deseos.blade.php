@@ -6,7 +6,6 @@
 @section('contenido')
     <div class="deseos pt-5">
     @foreach ($deseos as $deseo)
-    
         <div class="card">
             <div class="card-header">
             {{$deseo->nombre}} - {{$deseo->created_at}}
@@ -21,7 +20,7 @@
                         <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">
                             @csrf
                             @method('DELETE')
-                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>{{$deseo->valorados->count()}}
+                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-filled" style="color: rgb(175, 62, 62);"></span></button>{{$deseo->valorados->count()}}
                          </form>
                         @else
 
@@ -29,12 +28,12 @@
                             @csrf
                             @method('PUT')
 
-                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined"></span></button>  {{$deseo->valorados->count()}}
+                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined" style="color: rgb(175, 62, 62);"></span></button>  {{$deseo->valorados->count()}}
                         </form>
                         @endif
                         @else
     
-                        <span class="iconify" data-icon="ant-design:heart-filled"></span>  {{$deseo->valorados->count()}}
+                        <span class="iconify" data-icon="ant-design:heart-filled" style="color: rgb(175, 62, 62);"></span>  {{$deseo->valorados->count()}}
                         @endif
 
                         </div></p>
@@ -45,11 +44,10 @@
     
     @endforeach
 </div>
-
-
+<div class="d-flex justify-content-end fixed-bottom me-4"><button id="btnArriba"><span id="icono" class="iconify" data-icon="bi:arrow-up-square-fill" style="color: rgb(227, 175, 231);" data-width="35" data-height="40"></span></button></div>
 @endsection
 @section('scripts')
-    <script>
+<script src="https://tholman.com/elevator.js/elevator.js"></script>
+<script src="{{URL::asset('js/elevador.js')}}/"></script>
 
-    </script>
 @endsection
