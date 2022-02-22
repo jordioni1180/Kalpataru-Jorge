@@ -1,9 +1,12 @@
 @extends('layouts.masterpage')
-
+@section('estilos')
+<link rel="stylesheet" href="{{URL::asset('css/Resgistro.css') }}">
+@endsection
 @section('contenido')
-
+    <div id="fondo">
+        <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Registro') }}</div>
 
@@ -36,6 +39,18 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Correo') }}</label>
+
+                            <div class="col-md-6">
+                                
+                                <select name="curso_id">
+                                    @foreach ($cursos as $curso) 
+                                    <option value="{{$curso->id}}">{{$curso->nombre}}</option>
+                                    @endforeach
+                                  </select>
                             </div>
                         </div>
 
@@ -73,5 +88,6 @@
             </div>
         </div>
     </div>
-
+    </div>
+    </div>
 @endsection

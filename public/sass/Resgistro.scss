@@ -1,0 +1,22 @@
+#fondo{
+    position: relative;
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+#fondo::before{
+    content: "";
+    background-image: url(../images/FondoPastel.svg);
+    // background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.75;
+}
