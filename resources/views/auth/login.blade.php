@@ -1,11 +1,15 @@
 @extends('layouts.masterpage')
-
+@section('estilos')
+<link rel="stylesheet" href="{{URL::asset('css/InicioSesion.css')}}">
+@endsection
 @section('contenido')
+
+<div id="fondo">
 <div class="container t-3">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Iniciar tu Sesión') }}</div>
+                <div class="card-header">{{ __('Iniciar Sesión') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
@@ -70,4 +74,6 @@
         </div>
     </div>
 </div>
+</div>
+
 @endsection

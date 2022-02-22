@@ -17,23 +17,23 @@
                     <footer class="blockquote">{{$deseo->texto}}</footer>
                     <p><div id="gustar">
                         @if(Auth::check())
-                        @if($deseo->valorados->contains($usuario->id)) 
+                        @if($deseo->valorados->contains($usuario->id))
                         <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">
                             @csrf
                             @method('DELETE')
                             <button  type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>{{$deseo->valorados->count()}}
                          </form>
                         @else
-                        
+
                         <form action="{{route('deseos.update',[$deseo])}}" method="POST" enctype="multipart/form">
                             @csrf
                             @method('PUT')
-                            
+
                             <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined"></span></button>{{$deseo->valorados->count()}}
                         </form>
                         @endif
                         @endif
-                        
+
                         </div></p>
                 </blockquote>
             </div>
@@ -47,11 +47,6 @@
 @endsection
 @section('scripts')
     <script>
-        $(document).ready(function()){
 
-
-
-
-        }
     </script>
 @endsection

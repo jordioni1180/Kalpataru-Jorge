@@ -1,16 +1,16 @@
 $colorfondo: #f6eaF4;
-$navBackground:#A18CD1;
+$navBackground:#F4DAF6;
 $navlinkHover:#6441A4;
 $colorNav:#29274C;
 body{
     background-color:$colorfondo;
 }
 .navbar{
-    // background-color: $navBackground!important;
-    background: transparent !important;
+    background-color: $colorfondo!important;
+
     z-index: 100;
 
-    
+
 }
 .nav-link{
     color: $colorNav!important;

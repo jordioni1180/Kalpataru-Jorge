@@ -19,7 +19,7 @@ class DeseosController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $deseos=Deseo::all();
+        $deseos=Deseo::inRandomOrder()->limit(40)->get();
 
 
         return view('secciones.Deseos',['deseos'=>$deseos,'usuario'=>$user]);
@@ -85,10 +85,10 @@ class DeseosController extends Controller
      */
     public function update(Deseo $deseo)
     {
-       
+
         $usuario=Auth::user();
         $usuario->valorados()->save($deseo);
-        return \Redirect::back(); 
+        return \Redirect::back();
     }
 
     /**
@@ -101,7 +101,7 @@ class DeseosController extends Controller
     {
         $usuario = Auth::user();
         $valoracion= ValoracionDeseo::where('deseo_id', $deseo)->where('user_id',$usuario->id);
-        $valoracion->delete(); 
-        return \Redirect::back(); 
+        $valoracion->delete();
+        return \Redirect::back();
     }
 }
