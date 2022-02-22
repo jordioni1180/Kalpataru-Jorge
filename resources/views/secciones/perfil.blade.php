@@ -34,16 +34,31 @@
                         <blockquote class="blockquote mb-0">
                             <p></p>
                             <footer class="blockquote">{{$deseo->texto}}</footer>
-                            <p>Likes - {{$deseo->valorados->count()}}</p>
+                            <p><div id="gustar">
+                                @if($deseo->valorados->contains($usuario->id)) 
+                                <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>{{$deseo->valorados->count()}}
+                                 </form>
+                                @else
+                                
+                                <form action="{{route('deseos.update',[$deseo])}}" method="POST" enctype="multipart/form">
+                                    @csrf
+                                    @method('PUT')
+                                    
+                                    <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined"></span></button>{{$deseo->valorados->count()}}
+                                </form>
+                                @endif</div></p>
                         </blockquote>
                     </div>
                 </div>
                 <hr>
             @endforeach
         </div>
-
+        
             @foreach ($usuario->valorados as $deseo)
-            <div class="MeGusta">
+            
                 <div class="card">
                     <div class="card-header">
                     {{$deseo->nombre}} - {{$deseo->created_at}}
@@ -52,13 +67,28 @@
                         <blockquote class="blockquote mb-0">
                             <p></p>
                             <footer class="blockquote">{{$deseo->texto}}</footer>
-                            <p>Likes - {{$deseo->valorados->count()}}</p>
+                            <p><div id="gustar">
+                                @if($deseo->valorados->contains($usuario->id)) 
+                                <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>{{$deseo->valorados->count()}}
+                                 </form>
+                                @else
+                                
+                                <form action="{{route('deseos.update',[$deseo])}}" method="POST" enctype="multipart/form">
+                                    @csrf
+                                    @method('PUT')
+                                    
+                                    <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined"></span></button>{{$deseo->valorados->count()}}
+                                </form>
+                                @endif</div></p>
                         </blockquote>
                     </div>
                 </div>
-            </div>
+            <hr>
             @endforeach
-
+        
          </div>
       </div>
    </div>

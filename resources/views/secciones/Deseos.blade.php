@@ -15,13 +15,13 @@
                 <blockquote class="blockquote mb-0">
                     <p></p>
                     <footer class="blockquote">{{$deseo->texto}}</footer>
-                    <p><div id="likes">Likes - {{$deseo->valorados->count()}}</div><div id="gustar">
+                    <p><div id="gustar">
                         @if(Auth::check())
                         @if($deseo->valorados->contains($usuario->id)) 
                         <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">
                             @csrf
                             @method('DELETE')
-                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>
+                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>{{$deseo->valorados->count()}}
                          </form>
                         @else
                         
@@ -29,7 +29,7 @@
                             @csrf
                             @method('PUT')
                             
-                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined"></span></button>
+                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined"></span></button>{{$deseo->valorados->count()}}
                         </form>
                         @endif
                         @endif
