@@ -4,9 +4,9 @@
     <link rel="stylesheet" href="{{URL::asset('css/Deseos.css') }}">
 @endsection
 @section('contenido')
-
+    <div class="deseos pt-5">
     @foreach ($deseos as $deseo)
-    <div class="deseos">
+    
         <div class="card">
             <div class="card-header">
             {{$deseo->nombre}} - {{$deseo->created_at}}
@@ -21,7 +21,7 @@
                         <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">
                             @csrf
                             @method('DELETE')
-                            <button  type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>{{$deseo->valorados->count()}}
+                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>{{$deseo->valorados->count()}}
                          </form>
                         @else
 
@@ -29,9 +29,12 @@
                             @csrf
                             @method('PUT')
 
-                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined"></span></button>{{$deseo->valorados->count()}}
+                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined"></span></button>  {{$deseo->valorados->count()}}
                         </form>
                         @endif
+                        @else
+    
+                        <span class="iconify" data-icon="ant-design:heart-filled"></span>  {{$deseo->valorados->count()}}
                         @endif
 
                         </div></p>
@@ -39,9 +42,9 @@
             </div>
         </div>
         <hr>
-    </div>
+    
     @endforeach
-
+</div>
 
 
 @endsection

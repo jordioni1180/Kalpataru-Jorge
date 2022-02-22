@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,10 +16,13 @@
     @yield('estilos')
 </head>
 <body>
+    <div class="container-fluid pt-5 ps-0 pe-0">
+        
     @include('layouts.nav')
     @include('layouts.alertas')
     @yield('contenido')
-
+    
+    </div>
 </body>
 </html>
 @yield('scripts')

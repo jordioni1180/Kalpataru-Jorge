@@ -4,7 +4,8 @@
 <link rel="stylesheet" href="{{URL::asset('css/CrearDeseos.css') }}">
 @endsection
 @section('contenido')
-    <div id="seccion"><p>En esta seccion podras mandar tus deseos a favor de esta causa para el resto del mundo</p> </div>
+    <div id="seccion" class="seccion pt-5">
+    <p>En esta seccion podras mandar tus deseos a favor de esta causa para el resto del mundo</p> </div>
     <form method="post" action="{{route('deseos.store')}}">
         @csrf
         <div id="containerDeseo">

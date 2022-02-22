@@ -4,15 +4,15 @@ $navlinkHover:#6441A4;
 $colorNav:#29274C;
 body{
     background-color:$colorfondo;
+    
 }
+
 .navbar{
     background-color: $colorfondo!important;
     position: fixed;
     width: 100%;
     z-index: 100;
-}
-#separador{
-
+    top: 0;
 }
 .nav-link{
     color: $colorNav!important;

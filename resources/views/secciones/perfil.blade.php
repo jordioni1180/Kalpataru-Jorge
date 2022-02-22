@@ -6,8 +6,8 @@
 @endsection
 @section('contenido')
 
-<div class="container">
-   <div class="row">
+
+   <div class="row pt-5">
       <div class="col-md-12">
         <div class="profile">
             <div class="profile-header">
@@ -92,7 +92,7 @@
          </div>
       </div>
    </div>
-</div>
+
 
 @endsection
 @section('scripts')
