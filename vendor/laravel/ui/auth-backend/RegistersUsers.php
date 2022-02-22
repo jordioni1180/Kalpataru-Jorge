@@ -6,6 +6,7 @@ use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Curso;
 
 trait RegistersUsers
 {
@@ -18,7 +19,9 @@ trait RegistersUsers
      */
     public function showRegistrationForm()
     {
-        return view('auth.register');
+        $cursos=Curso::all();
+
+        return view('auth.register',['cursos'=>$cursos]);
     }
 
     /**

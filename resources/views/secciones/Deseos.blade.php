@@ -21,7 +21,7 @@
                         <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">
                             @csrf
                             @method('DELETE')
-                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>{{$deseo->valorados->count()}}
+                            <button  type="submit"><span class="iconify" data-icon="ant-design:heart-filled"></span></button>{{$deseo->valorados->count()}}
                          </form>
                         @else
                         
