@@ -25,11 +25,11 @@
                          </form>
                         @else
                         
-                        <form action="{{route('deseos.update',[$deseo])}}" method="get" enctype="multipart/form">
+                        <form action="{{route('deseos.update',[$deseo])}}" method="POST" enctype="multipart/form">
                             @csrf
-                            @method('GET')
+                            @method('PUT')
                             
-                            <span class="iconify" data-icon="ant-design:heart-outlined"></span>
+                            <button type="submit"><span class="iconify" data-icon="ant-design:heart-outlined"></span></button>
                         </form>
                         @endif
                         @endif

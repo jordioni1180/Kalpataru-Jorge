@@ -85,6 +85,7 @@ class DeseosController extends Controller
      */
     public function update(Deseo $deseo)
     {
+       
         $usuario=Auth::user();
         $usuario->valorados()->save($deseo);
         return \Redirect::back(); 
