@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Deseo;
+use App\Models\ValoracionDeseo;
 use Illuminate\Support\Facades\DB;
 use Auth;
 
@@ -82,9 +83,11 @@ class DeseosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Deseo $deseo)
     {
-        //
+        $usuario=Auth::user();
+        $usuario->valorados()->save($deseo);
+        return \Redirect::back(); 
     }
 
     /**
@@ -93,8 +96,11 @@ class DeseosController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($deseo)
     {
-        //
+        $usuario = Auth::user();
+        $valoracion= ValoracionDeseo::where('deseo_id', $deseo)->where('user_id',$usuario->id);
+        $valoracion->delete(); 
+        return \Redirect::back(); 
     }
 }

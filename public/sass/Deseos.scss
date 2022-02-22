@@ -1,6 +1,11 @@
 
 $HeaderCardColor:#7E52A0;
 
+
+button[type="submit"]{
+    background: transparent;
+    border: none;
+}
 .deseos{
     margin:2%;
     border-top-right-radius: 12px!important;
