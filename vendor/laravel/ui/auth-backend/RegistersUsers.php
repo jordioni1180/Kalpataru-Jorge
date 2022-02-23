@@ -7,6 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Curso;
+use App\Models\User;
 
 trait RegistersUsers
 {
@@ -32,6 +33,8 @@ trait RegistersUsers
      */
     public function register(Request $request)
     {
+
+
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
