@@ -26,7 +26,8 @@ button[type="submit"]{
     border-bottom-left-radius: 12px!important;
 }
 .card-header {
-    
+    display: flex;
+    justify-content: space-between;
     background-color: $HeaderCardColor!important;
     color: white !important;
     border-top-right-radius: 12px!important;

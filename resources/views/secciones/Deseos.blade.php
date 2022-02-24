@@ -8,7 +8,7 @@
     @foreach ($deseos as $deseo)
         <div class="card">
             <div class="card-header">
-            {{$deseo->nombre}} - {{$deseo->created_at}}
+            <div class="nombreDeseo">{{ $deseo->nombre}}</div><div class="fecha">{{$deseo->created_at}}</div>
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
@@ -49,5 +49,20 @@
 @section('scripts')
 <script src="https://tholman.com/elevator.js/elevator.js"></script>
 <script src="{{URL::asset('js/elevador.js')}}/"></script>
+<script src="{{URL::asset('lib/moment.js')}}/"></script>
+<script src="{{URL::asset('lib/moment-with-locales.js')}}/"></script>
+<script>
+    moment.locale('es');
+    
+    let fecha=document.getElementsByClassName('fecha');
+    
 
+    for (let i = 0; i < fecha.length; i++) {
+         let nueva=fecha[i].textContent;
+        fecha[i].innerText=moment(nueva).startOf('day').fromNow();
+        
+        
+    }
+
+</script>
 @endsection
