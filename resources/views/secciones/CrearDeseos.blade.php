@@ -17,11 +17,12 @@
     </div>
     </div>
     <div id="boton">
-    <button class="btn btn-primary" type="submit">Crear Deseo</button>
+    <button id="btnEnviar" class="btn btn-primary" onclick="validar(); return false;" type="submit">Crear Deseo</button>
     </div>
     </form>
 
 @endsection
 @section('scripts')
 
+<script type='text/javascript' src="{{URL::asset('js/validacionTexto.js')}}/"></script>
 @endsection

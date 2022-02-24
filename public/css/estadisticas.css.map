@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAA;EACL,OAAO,EAAE,IAAI;CAChB;;AACD,AAAA,gBAAgB,CAAA;EACZ,OAAO,EAAE,IAAI;CAChB;;AACD,AAAA,MAAM,CAAA;EACF,KAAK,EAAE,GAAG,CAAA,UAAU;EACpB,WAAW,EAAC,GAAG;CAClB",
+    "sources": [
+        "../sass/estadisticas.scss"
+    ],
+    "names": [],
+    "file": "estadisticas.css"
+}

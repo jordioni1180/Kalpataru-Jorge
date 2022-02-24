@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InicioController;
 use App\Http\Controllers\DeseosController;
 use App\Http\Controllers\PerfilController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,9 @@ use App\Http\Controllers\PerfilController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Variables
+Route::get('/estadisticas', [HomeController::class, 'index']);
+
 
 //Ruta de inicio al cargar la pagina por primera vez
 Route::get('/', [InicioController::class, 'index'])->name('home');
