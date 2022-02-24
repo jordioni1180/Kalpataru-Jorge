@@ -2,9 +2,11 @@ $colorfondo: #f6eaF4;
 $navBackground:#F4DAF6;
 $navlinkHover:#6441A4;
 $colorNav:#29274C;
+$fuente:'Crete Round', serif;
 body{
     background-color:$colorfondo;
-    
+    font-family: $fuente!important;
+
 }
 
 .navbar{
@@ -16,12 +18,15 @@ body{
 }
 .nav-link{
     color: $colorNav!important;
+    border-radius: 15px;
 }
 .nav-link:hover{
-    color: $navlinkHover!important;;
+    color: $navlinkHover!important;
+    background-color: $navBackground!important;
+    border-radius: 15px;
 }
 
 .navbar-dark .navbar-toggler{
-    background-color:#F4DAF6;
+    background-color:$navBackground!important;
 }
 

@@ -14,7 +14,7 @@
                 <blockquote class="blockquote mb-0">
                     <p></p>
                     <footer class="blockquote">{{$deseo->texto}}</footer>
-                    <p><div id="gustar">
+                    <p><div class="gustar">
                         @if(Auth::check())
                         @if($deseo->valorados->contains($usuario->id))
                         <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">

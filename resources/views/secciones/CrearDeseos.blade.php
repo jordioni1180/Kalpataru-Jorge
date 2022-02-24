@@ -10,10 +10,10 @@
         @csrf
         <div id="containerDeseo">
         <div class="form-outline mb-4">
-            <input type="text" id="formTexto" class="form-control" name="nombre" placeholder="Nombre del deseo"/>
+            <input type="text" id="formTexto" class="form-control" name="nombre" maxlength="60" placeholder="Nombre del deseo"/>
           </div>
         <div class="form-outline mb-4">
-        <textarea class="form-control" id="textArea" rows="3" name="texto" placeholder="Escribe tu deseo"></textarea>
+        <textarea class="form-control" id="textArea" rows="3" name="texto" maxlength="255" placeholder="Escribe tu deseo"></textarea>
     </div>
     </div>
     <div id="boton">

@@ -18,11 +18,6 @@
             </div>
          </div>
          <div id="content" class="content content-full-width">
-            <!-- Button trigger modal -->
-
-
-
-
             <div class="deseos">
             @foreach ($usuario->deseos as $deseo)
 
@@ -34,7 +29,7 @@
                         <blockquote class="blockquote mb-0">
                             <p></p>
                             <footer class="blockquote">{{$deseo->texto}}</footer>
-                            <p><div id="gustar">
+                            <p><div class="gustar">
                                 @if($deseo->valorados->contains($usuario->id)) 
                                 <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">
                                     @csrf
@@ -67,7 +62,7 @@
                         <blockquote class="blockquote mb-0">
                             <p></p>
                             <footer class="blockquote">{{$deseo->texto}}</footer>
-                            <p><div id="gustar">
+                            <p><div class="gustar">
                                 @if($deseo->valorados->contains($usuario->id)) 
                                 <form action="{{route('deseos.destroy',[$deseo])}}" method="post" enctype="multipart/form">
                                     @csrf

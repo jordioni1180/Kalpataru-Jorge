@@ -11,6 +11,10 @@
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     {{-- Estilos globales --}}
     <link rel="stylesheet" href="{{URL::asset('css/style.css') }}">
+    {{-- fuentes --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
     {{--  --}}
     <title>kalpataru-@yield('Titulo')</title>
     @yield('estilos')

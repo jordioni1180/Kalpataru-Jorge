@@ -33,4 +33,13 @@ button[type="submit"] {
   border-top-right-radius: 12px !important;
   border-top-left-radius: 12px !important;
 }
+
+.gustar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
 /*# sourceMappingURL=Deseos.css.map */

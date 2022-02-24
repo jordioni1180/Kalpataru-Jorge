@@ -1,5 +1,6 @@
 body {
   background-color: #f6eaF4;
+  font-family: "Crete Round", serif !important;
 }
 
 .navbar {
@@ -12,13 +13,16 @@ body {
 
 .nav-link {
   color: #29274C !important;
+  border-radius: 15px;
 }
 
 .nav-link:hover {
   color: #6441A4 !important;
+  background-color: #F4DAF6 !important;
+  border-radius: 15px;
 }
 
 .navbar-dark .navbar-toggler {
-  background-color: #F4DAF6;
+  background-color: #F4DAF6 !important;
 }
 /*# sourceMappingURL=style.css.map */
