@@ -28,7 +28,7 @@
 
                 <div class="card">
                     <div class="card-header">
-                    {{$deseo->nombre}} - {{$deseo->created_at}}
+                    <div class="nombreDeseo">{{ $deseo->nombre}}</div><div class="fecha">{{$deseo->created_at}}</div>
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
@@ -61,7 +61,7 @@
             
                 <div class="card">
                     <div class="card-header">
-                    {{$deseo->nombre}} - {{$deseo->created_at}}
+                        <div class="nombreDeseo">{{ $deseo->nombre}}</div><div class="fecha">{{$deseo->created_at}}</div>
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
@@ -100,4 +100,7 @@
 <script src="{{URL::asset('js/perfil.js') }}"></script>
 <script src="https://tholman.com/elevator.js/elevator.js"></script>
 <script src="{{URL::asset('js/elevador.js')}}/"></script>
+<script src="{{URL::asset('lib/moment.js')}}/"></script>
+<script src="{{URL::asset('lib/moment-with-locales.js')}}/"></script>
+<script src="{{URL::asset('js/tiempoRelativo.js')}}/"></script>
 @endsection

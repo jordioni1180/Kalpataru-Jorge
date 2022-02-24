@@ -64,6 +64,12 @@ button[type="submit"] {
 }
 
 .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   background-color: #7E52A0 !important;
   color: white !important;
   border-top-right-radius: 12px !important;

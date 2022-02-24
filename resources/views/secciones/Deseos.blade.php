@@ -51,18 +51,5 @@
 <script src="{{URL::asset('js/elevador.js')}}/"></script>
 <script src="{{URL::asset('lib/moment.js')}}/"></script>
 <script src="{{URL::asset('lib/moment-with-locales.js')}}/"></script>
-<script>
-    moment.locale('es');
-    
-    let fecha=document.getElementsByClassName('fecha');
-    
-
-    for (let i = 0; i < fecha.length; i++) {
-         let nueva=fecha[i].textContent;
-        fecha[i].innerText=moment(nueva).startOf('day').fromNow();
-        
-        
-    }
-
-</script>
+<script src="{{URL::asset('js/tiempoRelativo.js')}}/"></script>
 @endsection

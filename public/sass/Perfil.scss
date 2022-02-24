@@ -59,7 +59,8 @@ button[type="submit"]{
     width: 75% !important;
 }
 .card-header {
-
+    display: flex;
+    justify-content: space-between;
     background-color: $HeaderCardColor!important;
     color: white !important;
     border-top-right-radius: 12px!important;
