@@ -28,7 +28,13 @@ Tambien la base de datos correspondiente a esta
 
 Una vez subidos los archivos de la web y la base de datos correctamente solo quedaría importar las tablas de la base de datos y descomprimir los archivos de la web.
 y una vez descomprimidos los archivos deberán moverse dentro de la carpeta public_html que crea el hosting por defecto.
+
 ![image](https://user-images.githubusercontent.com/76107525/155651384-5001a6fd-74ce-4e2d-a2ef-2438591fb851.png)
+
 Ahora podremos acceder a nuestro proyecto adecuadamente
+
+<h2>P:D</h2> 
+
+Las librerias usadas en este proyecto han sido moment.js, jquery, chart.js, scene.js, typeit.js entre otras.
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
