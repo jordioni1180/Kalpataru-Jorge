@@ -9,9 +9,7 @@ class Deseo extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'name', 'email', 'password','curso_id',
-        ];
+    
 
     public function usuario(){
         return $this->belongsTo(User::class, 'user_id', 'id');

@@ -85,7 +85,7 @@ REPLACE INTO `data_rows` (`id`, `data_type_id`, `field`, `type`, `display_name`,
 	(5, 1, 'remember_token', 'text', 'Remember Token', 0, 0, 0, 0, 0, 0, '{}', 5),
 	(6, 1, 'created_at', 'timestamp', 'Creado', 0, 1, 1, 0, 0, 0, '{}', 6),
 	(7, 1, 'updated_at', 'timestamp', 'Updated At', 0, 0, 0, 0, 0, 0, '{}', 7),
-	(8, 1, 'avatar', 'image', 'Avatar', 0, 0, 0, 0, 0, 0, '{}', 8),
+	(8, 1, 'avatar', 'image', 'Avatar', 0, 1, 1, 1, 1, 1, '{}', 8),
 	(9, 1, 'user_belongsto_role_relationship', 'relationship', 'Rol', 0, 1, 1, 1, 1, 0, '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsTo","column":"role_id","key":"id","label":"display_name","pivot_table":"roles","pivot":"0","taggable":"0"}', 10),
 	(10, 1, 'user_belongstomany_role_relationship', 'relationship', 'voyager::seeders.data_rows.roles', 0, 1, 1, 1, 1, 0, '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsToMany","column":"id","key":"id","label":"display_name","pivot_table":"user_roles","pivot":"1","taggable":"0"}', 11),
 	(11, 1, 'settings', 'hidden', 'Settings', 0, 0, 0, 0, 0, 0, '{}', 12),
@@ -145,7 +145,7 @@ CREATE TABLE IF NOT EXISTS `data_types` (
 -- Volcando datos para la tabla kalpataru_jorge.data_types: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `data_types` DISABLE KEYS */;
 REPLACE INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `display_name_plural`, `icon`, `model_name`, `policy_name`, `controller`, `description`, `generate_permissions`, `server_side`, `details`, `created_at`, `updated_at`) VALUES
-	(1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}', '2022-02-16 22:48:09', '2022-02-16 23:10:06'),
+	(1, 'users', 'users', 'User', 'Users', 'voyager-person', 'TCG\\Voyager\\Models\\User', 'TCG\\Voyager\\Policies\\UserPolicy', 'TCG\\Voyager\\Http\\Controllers\\VoyagerUserController', NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"desc","default_search_key":null,"scope":null}', '2022-02-16 22:48:09', '2022-02-22 21:09:33'),
 	(2, 'menus', 'menus', 'Menu', 'Menus', 'voyager-list', 'TCG\\Voyager\\Models\\Menu', NULL, '', '', 1, 0, NULL, '2022-02-16 22:48:10', '2022-02-16 22:48:10'),
 	(3, 'roles', 'roles', 'Role', 'Roles', 'voyager-lock', 'TCG\\Voyager\\Models\\Role', NULL, 'TCG\\Voyager\\Http\\Controllers\\VoyagerRoleController', '', 1, 0, NULL, '2022-02-16 22:48:10', '2022-02-16 22:48:10'),
 	(4, 'deseos', 'deseos', 'Deseo', 'Deseos', NULL, 'App\\Models\\Deseo', NULL, NULL, NULL, 1, 0, '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}', '2022-02-16 22:53:17', '2022-02-16 23:08:39'),
@@ -155,27 +155,28 @@ REPLACE INTO `data_types` (`id`, `name`, `slug`, `display_name_singular`, `displ
 -- Volcando estructura para tabla kalpataru_jorge.deseos
 CREATE TABLE IF NOT EXISTS `deseos` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `nombre` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `nombre` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `texto` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `validado` int(11) NOT NULL DEFAULT '0',
   `user_id` bigint(20) unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `deseos_user_id_foreign` (`user_id`),
   CONSTRAINT `deseos_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla kalpataru_jorge.deseos: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `deseos` DISABLE KEYS */;
-REPLACE INTO `deseos` (`id`, `nombre`, `texto`, `validado`, `user_id`, `created_at`, `updated_at`) VALUES
-	(1, 'Deseo1 ', 'Me gustaria poder cumplir mi deseo de aprobar este proyecto', 1, 1, '2022-02-17 18:38:15', '2022-02-17 18:38:16'),
-	(2, 'Deseo 2', 'La pelicula de spiderman pudo ser mejor', 1, 1, '2022-02-17 18:38:52', '2022-02-17 18:38:53'),
-	(3, 'Deseo 4', 'Ojala poder viajar a portugal pronto', 0, 1, '2022-02-17 18:39:35', '2022-02-17 18:39:35'),
-	(4, 'Deseo 5', 'La moraleja dice que al que madruga dios le ayuda, entonces nunca me ayudara', 1, 1, '2022-02-17 18:40:04', '2022-02-17 18:40:05'),
-	(5, 'Deseo 6', 'Sigo trabajando en el diseño de esta pagina', 0, 1, '2022-02-19 03:19:00', '2022-02-19 03:19:00'),
-	(6, 'Deseo 7', 'Espero que el scroll funcione bien', 0, 1, '2022-02-19 03:19:26', '2022-02-19 03:19:26'),
-	(7, 'Deseo 8', 'Deseo número 8, sigo creando deseos', 1, 1, '2022-02-19 03:19:58', '2022-02-19 03:19:59');
+REPLACE INTO `deseos` (`id`, `nombre`, `texto`, `user_id`, `created_at`, `updated_at`) VALUES
+	(1, 'Deseo1 ', 'Me gustaria poder cumplir mi deseo de aprobar este proyecto', 1, '2022-02-17 18:38:15', '2022-02-17 18:38:16'),
+	(2, 'Deseo 2', 'La pelicula de spiderman pudo ser mejor', 1, '2022-02-17 18:38:52', '2022-02-17 18:38:53'),
+	(4, 'Deseo 5', 'La moraleja dice que al que madruga dios le ayuda, entonces nunca me ayudara', 1, '2022-02-17 18:40:04', '2022-02-17 18:40:05'),
+	(6, 'Deseo 7', 'Espero que el scroll funcione bien', 1, '2022-02-19 03:19:26', '2022-02-19 03:19:26'),
+	(7, 'Deseo 8', 'Deseo número 8, sigo creando deseos', 1, '2022-02-19 03:19:58', '2022-02-19 03:19:59'),
+	(8, 'ADIOS MUNDO', 'ADIOS dasdasdasdasdasdasdasd', 1, '2022-02-23 21:28:54', '2022-02-23 21:28:54'),
+	(9, 'Fiesta', 'gtregrdgfdgfdg', 1, '2022-02-24 02:40:23', '2022-02-24 01:35:17'),
+	(10, 'Probando el moment js', 'Espero que esto salga bien', 1, '2022-02-24 02:45:37', '2022-02-24 02:45:37'),
+	(11, 'El dios de la danza', 'Me gusta el fuego', 1, '2022-02-24 02:46:52', '2022-02-24 02:46:52');
 /*!40000 ALTER TABLE `deseos` ENABLE KEYS */;
 
 -- Volcando estructura para tabla kalpataru_jorge.failed_jobs
@@ -229,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `menu_items` (
   PRIMARY KEY (`id`),
   KEY `menu_items_menu_id_foreign` (`menu_id`),
   CONSTRAINT `menu_items_menu_id_foreign` FOREIGN KEY (`menu_id`) REFERENCES `menus` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla kalpataru_jorge.menu_items: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `menu_items` DISABLE KEYS */;
@@ -244,8 +245,9 @@ REPLACE INTO `menu_items` (`id`, `menu_id`, `title`, `url`, `target`, `icon_clas
 	(8, 1, 'Compass', '', '_self', 'voyager-compass', NULL, 5, 3, '2022-02-16 22:48:13', '2022-02-16 23:04:49', 'voyager.compass.index', NULL),
 	(9, 1, 'BREAD', '', '_self', 'voyager-bread', NULL, 5, 4, '2022-02-16 22:48:13', '2022-02-16 23:04:49', 'voyager.bread.index', NULL),
 	(10, 1, 'Settings', '', '_self', 'voyager-settings', NULL, NULL, 5, '2022-02-16 22:48:13', '2022-02-16 23:05:01', 'voyager.settings.index', NULL),
-	(11, 1, 'Deseos', '', '_self', NULL, NULL, NULL, 7, '2022-02-16 22:53:17', '2022-02-16 23:04:49', 'voyager.deseos.index', NULL),
-	(12, 1, 'Cursos', '', '_self', NULL, NULL, NULL, 8, '2022-02-16 23:00:15', '2022-02-16 23:04:49', 'voyager.cursos.index', NULL);
+	(11, 1, 'Deseos', '', '_self', 'voyager-star', '#ece404', NULL, 7, '2022-02-16 22:53:17', '2022-02-24 21:33:54', 'voyager.deseos.index', 'null'),
+	(12, 1, 'Cursos', '', '_self', 'voyager-logbook', '#7f2424', NULL, 8, '2022-02-16 23:00:15', '2022-02-24 21:38:34', 'voyager.cursos.index', 'null'),
+	(13, 1, 'Estadisticas', 'estadisticas', '_self', 'voyager-receipt', '#00d9ff', NULL, 9, '2022-02-24 22:03:25', '2022-02-25 03:20:15', NULL, '');
 /*!40000 ALTER TABLE `menu_items` ENABLE KEYS */;
 
 -- Volcando estructura para tabla kalpataru_jorge.migrations
@@ -298,6 +300,8 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 
 -- Volcando datos para la tabla kalpataru_jorge.password_resets: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
+REPLACE INTO `password_resets` (`email`, `token`, `created_at`) VALUES
+	('jordioni1705@gmail.com', '$2y$10$T5Bh/ZiNXECVjcVgcIkSQOEf3IotIZvXZxrS2OOUL7gepaZ0zWYmS', '2022-02-25 03:01:34');
 /*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 
 -- Volcando estructura para tabla kalpataru_jorge.permissions
@@ -460,13 +464,13 @@ REPLACE INTO `settings` (`id`, `key`, `display_name`, `value`, `details`, `type`
 	(1, 'site.title', 'Site Title', 'Site Title', '', 'text', 1, 'Site'),
 	(2, 'site.description', 'Site Description', 'Site Description', '', 'text', 2, 'Site'),
 	(3, 'site.logo', 'Site Logo', '', '', 'image', 3, 'Site'),
-	(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', '', '', 'text', 4, 'Site'),
-	(5, 'admin.bg_image', 'Admin Background Image', '', '', 'image', 5, 'Admin'),
-	(6, 'admin.title', 'Admin Title', 'Voyager', '', 'text', 1, 'Admin'),
-	(7, 'admin.description', 'Admin Description', 'Welcome to Voyager. The Missing Admin for Laravel', '', 'text', 2, 'Admin'),
+	(4, 'site.google_analytics_tracking_id', 'Google Analytics Tracking ID', NULL, '', 'text', 4, 'Site'),
+	(5, 'admin.bg_image', 'Admin Background Image', 'settings\\February2022\\JbB9aw1rm9aBE9ZnYStj.jpg', '', 'image', 5, 'Admin'),
+	(6, 'admin.title', 'Admin Title', 'Kalpataru', '', 'text', 1, 'Admin'),
+	(7, 'admin.description', 'Admin Description', 'Bienvenido a Voyager. En este panel podrás administrar todo los usuarios, deseos, cursos, etc..', '', 'text', 2, 'Admin'),
 	(8, 'admin.loader', 'Admin Loader', '', '', 'image', 3, 'Admin'),
-	(9, 'admin.icon_image', 'Admin Icon Image', '', '', 'image', 4, 'Admin'),
-	(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', '', '', 'text', 1, 'Admin');
+	(9, 'admin.icon_image', 'Admin Icon Image', 'settings\\February2022\\5NpfVNjKMwZJ2CpE8RfS.png', '', 'image', 4, 'Admin'),
+	(10, 'admin.google_analytics_client_id', 'Google Analytics Client ID (used for admin dashboard)', NULL, '', 'text', 1, 'Admin');
 /*!40000 ALTER TABLE `settings` ENABLE KEYS */;
 
 -- Volcando estructura para tabla kalpataru_jorge.translations
@@ -492,7 +496,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `role_id` bigint(20) unsigned DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `dni` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `avatar` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'users/default.png',
   `email_verified_at` timestamp NULL DEFAULT NULL,
@@ -508,12 +511,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   KEY `users_role_id_foreign` (`role_id`),
   CONSTRAINT `users_curso_id_foreign` FOREIGN KEY (`curso_id`) REFERENCES `cursos` (`id`) ON DELETE CASCADE,
   CONSTRAINT `users_role_id_foreign` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Volcando datos para la tabla kalpataru_jorge.users: ~0 rows (aproximadamente)
+-- Volcando datos para la tabla kalpataru_jorge.users: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-REPLACE INTO `users` (`id`, `role_id`, `name`, `dni`, `email`, `avatar`, `email_verified_at`, `password`, `curso_id`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
-	(1, 1, 'jorge', NULL, 'jordioni1705@gmail.com', 'users/default.png', NULL, '$2y$10$IneIvWLmi3OPqdO86LWxP.6mAIzD7HWf4dTd59poN4T9hgiY.pARq', NULL, NULL, NULL, '2022-02-16 22:49:31', '2022-02-16 22:49:32');
+REPLACE INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `curso_id`, `remember_token`, `settings`, `created_at`, `updated_at`) VALUES
+	(1, 1, 'jorge', 'jordioni1705@gmail.com', 'users/default.png', NULL, '$2y$10$IneIvWLmi3OPqdO86LWxP.6mAIzD7HWf4dTd59poN4T9hgiY.pARq', NULL, NULL, '{"locale":"es"}', '2022-02-16 22:49:31', '2022-02-22 01:36:15'),
+	(5, 1, 'admin', 'admin@admin.com', 'users/default.png', NULL, '$2y$10$B6AmRI2BFl7rpMUOePxLYudAouVaB217x8m9V1llD1V3r2bDf4v3.', NULL, NULL, NULL, '2022-02-22 21:07:31', '2022-02-22 21:07:31'),
+	(6, 2, 'Lucho', 'portu@gmail.com', 'users\\February2022\\vJIwdu0h63vys0uvq03a.png', NULL, '$2y$10$xbvVsDqX3lw/5X5tb9xkYuTIOBFYcrHyojbeQdTIWsHkAxgBtDmUS', NULL, NULL, '{"locale":"es"}', '2022-02-22 21:08:43', '2022-02-22 21:09:46');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Volcando estructura para tabla kalpataru_jorge.user_roles
@@ -543,12 +548,13 @@ CREATE TABLE IF NOT EXISTS `valoracion_deseos` (
   KEY `valoracion_deseos_deseo_id_foreign` (`deseo_id`),
   CONSTRAINT `valoracion_deseos_deseo_id_foreign` FOREIGN KEY (`deseo_id`) REFERENCES `deseos` (`id`) ON DELETE CASCADE,
   CONSTRAINT `valoracion_deseos_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla kalpataru_jorge.valoracion_deseos: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `valoracion_deseos` DISABLE KEYS */;
 REPLACE INTO `valoracion_deseos` (`id`, `user_id`, `deseo_id`, `created_at`, `updated_at`) VALUES
-	(1, 1, 3, '2022-02-20 20:30:43', '2022-02-20 20:30:44');
+	(16, 1, 6, NULL, NULL),
+	(18, 1, 7, NULL, NULL);
 /*!40000 ALTER TABLE `valoracion_deseos` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

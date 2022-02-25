@@ -15,8 +15,8 @@ class CreateDeseosTable extends Migration
     {
         Schema::create('deseos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
             $table->text('texto');
-            $table->integer('validado')->default('0');
             $table->unsignedbigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
