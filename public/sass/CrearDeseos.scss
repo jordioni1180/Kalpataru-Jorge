@@ -1,3 +1,15 @@
+#fondo{
+    background-image: url(../images/FloresCrear.svg);
+
+    position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+}
+
+
+
 
 #containerDeseo{
     margin: 6%;
@@ -16,6 +28,20 @@
     margin-right: 6%;
 }
 
+#titulo{
+margin-top: 10% !important;
+margin-left: 15%;
+border: solid;
+border-radius: 15px;
+border-color: #F4DAF6;
+display: flex;
+flex-wrap: wrap;
+text-align:center;
+background-color: #f6eaF4;
+width:75%;
+justify-content:center;
+font-style: italic;
+}
 
 input[type="text"]
 {
@@ -33,3 +59,14 @@ input[type="text"]
     border: none;
     
 }
+
+#seccion {
+ 
+    -webkit-animation: aparecer 2s ease-in ;
+    -moz-animation: aparecer 2s ease-in;
+    animation: aparecer 2s ease-in;
+  }
+  @-webkit-keyframes aparecer {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }

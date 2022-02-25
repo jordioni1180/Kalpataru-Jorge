@@ -3,6 +3,20 @@
   border: none;
 }
 
+.deseos {
+  -webkit-animation: aparecer 2s ease-in;
+  animation: aparecer 2s ease-in;
+}
+
+@-webkit-keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 button[type="submit"] {
   background: transparent;
   border: none;

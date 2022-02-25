@@ -7,7 +7,7 @@
 <div id="fondo">
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div id="formulario" class="col-md-12">
             <div class="card">
                 <div class="card-header">{{ __('Iniciar Sesión') }}</div>
 
@@ -57,15 +57,15 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button id="boton" type="submit" class="btn btn-primary">
                                     {{ __('Iniciar Sesión') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
+                                {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('¿Olvidaste tu contraseña?') }}
                                     </a>
-                                @endif
+                                @endif --}}
                             </div>
                         </div>
                     </form>

@@ -23,4 +23,21 @@
   left: 0px;
   opacity: 0.75;
 }
+
+.card {
+  border-radius: 15px;
+  border: solid !important;
+  border-color: #F4DAF6 !important;
+}
+
+.card-header {
+  background-color: #7E52A0;
+  color: white;
+  border-top-left-radius: 15px !important;
+  border-top-right-radius: 15px !important;
+}
+
+#boton {
+  background-color: #7E52A0 !important;
+}
 /*# sourceMappingURL=InicioSesion.css.map */
