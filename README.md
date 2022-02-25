@@ -7,5 +7,8 @@ La ruta suele ser comunmente https://localhost/ y dentro tendrias acceso a todas
 
 En el caso de que quieras subirlo a un hosting los pasos dependeran de este:
 
+EPor ejemplo lo primero que habria que hacerse seria registrarse a la web del hosting 
+
+![image](https://user-images.githubusercontent.com/76107525/155650842-2149d29f-92ba-4efd-bdd4-7079fffaf243.png)
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
